@@ -1,0 +1,12 @@
+import Box from "@mui/material/Box";
+import Header from "../../components/layout/navbar/Header.tsx";
+
+
+export default function HomePage() {
+
+    return (
+        <Box>
+            <Header past={ [] } current={ "Home" } />
+        </Box>
+    );
+}
