@@ -53,7 +53,7 @@ export default function GenericUploadDialog(
         onUploaded,
         title = "Upload File",
         sourceLabel = "Source",
-        accept = ".csv,text/csv",
+        accept = ".csv,text/csv,.json,.jsonl,text/json,text/jsonl",
         onUpload
     }: GenericUploadDialogProps
 ) {
@@ -157,6 +157,7 @@ export default function GenericUploadDialog(
                 <Stack spacing={2}>
                     <Autocomplete
                         options={sources}
+                        getOptionLabel={(source) => source.name}
                         value={selectedSource}
                         onChange={(_, v) => setSelectedSource(v)}
                         loading={loadingSources}

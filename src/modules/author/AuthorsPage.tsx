@@ -11,6 +11,7 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import UploadFileOutlinedIcon from "@mui/icons-material/UploadFileOutlined";
+import SwapVertRoundedIcon from '@mui/icons-material/SwapVertRounded';
 import type { GridPaginationModel } from "@mui/x-data-grid-pro";
 import Header from "../../components/layout/navbar/Header.tsx";
 import GenericUploadDialog from "../../components/upload/GenericUploadDialog.tsx";
@@ -122,6 +123,12 @@ export default function AuthorsPage() {
                         title="Authors"
                         action={
                             <Stack direction="row" spacing={1}>
+                                <Button
+                                    startIcon={<SwapVertRoundedIcon />}
+                                    onClick={() => AuthorService.migrateAuthors()}
+                                >
+                                    Migrate
+                                </Button>
                                 <Button
                                     startIcon={<RefreshIcon />}
                                     onClick={() => load(paginationModel.page, paginationModel.pageSize)}
